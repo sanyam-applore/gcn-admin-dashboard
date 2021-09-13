@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './LoginPopup.module.css';
 import { Checkbox, FormControlLabel, Button } from '@material-ui/core';
 import POST from '../../../Requests/POST';
-
+import {toast} from 'react-toastify';
 const LoginPopup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -13,7 +13,13 @@ const LoginPopup = () => {
             identifier: email,
             password
         }, null);
-        console.log(response);
+        console.log(response)
+        if(response.statusCode){
+            toast.error(response.data[0].messages[0].message)
+        }
+        else{
+            toast.info('Successfully Logged In!')
+        }
 
     }
     return (
