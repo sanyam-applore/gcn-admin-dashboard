@@ -1,0 +1,13 @@
+.footer{
+    background-color: rgb(230,230,230);
+    height: 7.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+    width:30%;
+    margin-right: 5%;
+}

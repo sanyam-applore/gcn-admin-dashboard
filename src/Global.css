@@ -5,3 +5,6 @@
     box-sizing: border-box;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
+html{
+    overflow-y:hidden;
+}
