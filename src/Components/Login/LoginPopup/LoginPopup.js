@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import styles from './LoginPopup.module.css';
 import { Checkbox, FormControlLabel, Button } from '@material-ui/core';
 import POST from '../../../Requests/POST';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
+import { Redirect } from 'react-router-dom';
+
 const LoginPopup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [check, setCheck] = useState(false);
+    const [redirect, setRedirect] = useState(false);
 
     const attemptLogin = async () => {
         const response = await POST('/auth/local', {
@@ -14,13 +17,28 @@ const LoginPopup = () => {
             password
         }, null);
         console.log(response)
-        if(response.statusCode){
+        if (response.statusCode) {
             toast.error(response.data[0].messages[0].message)
         }
-        else{
-            toast.info('Successfully Logged In!')
+        else {
+            if (check) {
+                localStorage.setItem('JWTTOKEN', response.jwt);
+                localStorage.setItem('user', response.user);
+                setRedirect(true);
+                toast.info('Successfully Logged In!');
+            }
+            else {
+                sessionStorage.setItem('JWTTOKEN', response.jwt);
+                sessionStorage.setItem('user', response.user);
+                setRedirect(true);
+                toast.info('Successfully Logged In!');
+            }
+
         }
 
+    }
+    if (redirect) {
+        return <Redirect to="/dashboard" />
     }
     return (
         <div className={styles.wrapper}>
