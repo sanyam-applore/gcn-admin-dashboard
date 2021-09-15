@@ -1,0 +1,30 @@
+.seller {
+    padding: 1em;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 1em;
+}
+.createdAt{
+    text-align: center;
+}
+.seller:hover{
+    background-color: rgb(235, 235, 235)
+}
+
+.hr {
+    border: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+.GI{
+    overflow-x: scroll;
+    display: flex;
+    justify-content: space-between;
+}
+.email{
+    font-weight: 500;
+}
+.GI::-webkit-scrollbar{
+    display: none;
+}

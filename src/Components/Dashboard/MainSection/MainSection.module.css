@@ -2,4 +2,12 @@
     width:20%;
     height:100%;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 2em;
+}
+.container{
+    display:flex;
+}
+.currentTab{
+    width:80%;
 }
