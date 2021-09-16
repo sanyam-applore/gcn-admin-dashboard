@@ -1,0 +1,36 @@
+.sidebar {
+    width: 20%;
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+    padding:2em;
+    position: relative;
+}
+
+.list, .activeList {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    cursor: pointer;
+    padding-left: 6px;
+    transition: all 0.2s ease;
+}
+
+.activeList {
+    color: rgb(49, 64, 160);
+    font-weight: 500;
+    border-left: 2px solid rgb(49, 64, 160);
+}
+
+.list:hover {
+    color: rgb(49, 64, 160);
+    font-weight: 500;
+    border-left: 2px solid rgb(49, 64, 160);
+}
+
+.approveButton{
+    position: absolute;
+    bottom: 5%;
+    width:80%;
+    left: 10%;
+    
+
+}

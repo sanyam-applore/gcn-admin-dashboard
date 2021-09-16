@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './Global.css'
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Login from './Pages/Login/Login';
+import SellerQuestionairre from './Pages/SellerQuestionairre/SellerQuestionairre';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -35,6 +36,7 @@ function App() {
             <Switch>
               <Route path="/" exact render={(props) => <Login {...props} />} />
               <Route path="/dashboard" render={(props) => <Dashboard {...props} />} />
+              <Route path="/seller/:id" render={(props) => <SellerQuestionairre {...props} />} />
             </Switch>
           </Router>
         </div>
